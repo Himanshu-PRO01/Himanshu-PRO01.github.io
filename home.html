@@ -13,8 +13,21 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="style.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2S9LH667NE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2S9LH667NE');
+</script>
 </head>
 <body>
+    <!-- Auth Loader Overlay -->
+    <div id="auth-loader" class="auth-loader-overlay">
+        <div class="spinner"></div>
+    </div>
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -224,6 +237,11 @@
                 window.location.href = 'login.html';
             } else {
                 console.log("Welcome,", user.email);
+
+                // Hide loader
+                const loader = document.getElementById('auth-loader');
+                if (loader) loader.style.opacity = '0';
+                setTimeout(() => { if (loader) loader.style.display = 'none'; }, 300);
                 // User is valid. Change the Login button to a Logout button
                 const authBtn = document.getElementById('auth-btn');
                 if (authBtn) {

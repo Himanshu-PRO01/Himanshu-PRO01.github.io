@@ -63,76 +63,38 @@
     <!-- Page Header -->
     <header class="page-header">
         <div class="section-container text-center">
-            <h1 class="hero-title">Engineering <span>Notes</span></h1>
-            <p class="hero-subtitle" style="margin: 0 auto; margin-bottom: 1.5rem;">Select your subject below to access organized study
-                materials, chapters, and resources.</p>
-            <div class="badge" style="display: inline-block; margin-bottom: 0; font-size: 1.5rem; padding: 1rem 3rem; border-radius: 30px; border: 2px solid rgba(6, 182, 212, 0.4);">B.Tech 1st</div>
+            <h1 class="hero-title">Engineering <span>Resources</span></h1>
+            <p class="hero-subtitle" style="margin: 0 auto; margin-bottom: 1.5rem;">Access essential resources to excel in your studies.</p>
         </div>
     </header>
 
-    <!-- Subjects Section -->
+    <!-- Resources Section -->
     <section class="subjects-section">
         <div class="section-container" style="padding-top: 2rem; padding-bottom: 8rem;">
             <div class="subjects-grid">
 
-                <!-- Physics -->
-                <a href="physics.html" class="subject-card">
-                    <div class="subject-icon cyan-glow"><i data-lucide="atom"></i></div>
-                    <h3>Physics</h3>
-                </a>
-
-                <!-- Chemistry -->
-                <a href="chemistry.html" class="subject-card">
-                    <div class="subject-icon pink-glow"><i data-lucide="flask-conical"></i></div>
-                    <h3>Chemistry</h3>
-                </a>
-
-                <!-- Maths 1 -->
+                <!-- Syllabus -->
                 <a href="#" class="subject-card">
-                    <div class="subject-icon blue-glow"><i data-lucide="calculator"></i></div>
-                    <h3>Maths 1</h3>
+                    <div class="subject-icon cyan-glow"><i data-lucide="book"></i></div>
+                    <h3>Syllabus</h3>
                 </a>
 
-                <!-- Maths 2 -->
+                <!-- Previous Year Papers -->
                 <a href="#" class="subject-card">
-                    <div class="subject-icon purple-glow"><i data-lucide="function-square"></i></div>
-                    <h3>Maths 2</h3>
+                    <div class="subject-icon pink-glow"><i data-lucide="file-text"></i></div>
+                    <h3>Previous Year Papers</h3>
                 </a>
 
-                <!-- Basic of Electrical Engineering -->
-                <a href="ee.html" class="subject-card">
-                    <div class="subject-icon cyan-glow"><i data-lucide="zap"></i></div>
-                    <h3>Basic of Electrical Engineering</h3>
+                <!-- Reference Books -->
+                <a href="#" class="subject-card">
+                    <div class="subject-icon blue-glow"><i data-lucide="library"></i></div>
+                    <h3>Reference Books</h3>
                 </a>
 
-                <!-- Basic of Electronics Engineering -->
-                <a href="electronics.html" class="subject-card">
-                    <div class="subject-icon pink-glow"><i data-lucide="cpu"></i></div>
-                    <h3>Basic of Electronics Engineering</h3>
-                </a>
-
-                <!-- Basic of Mechanical Engineering -->
-                <a href="mechanical.html" class="subject-card">
-                    <div class="subject-icon blue-glow"><i data-lucide="settings"></i></div>
-                    <h3>Basic of Mechanical Engineering</h3>
-                </a>
-
-                <!-- Soft Skills -->
-                <a href="soft_skills.html" class="subject-card">
-                    <div class="subject-icon purple-glow"><i data-lucide="users"></i></div>
-                    <h3>Soft Skills</h3>
-                </a>
-
-                <!-- PPS -->
-                <a href="pps.html" class="subject-card">
-                    <div class="subject-icon cyan-glow"><i data-lucide="code"></i></div>
-                    <h3>PPS</h3>
-                </a>
-
-                <!-- EVS -->
-                <a href="evs.html" class="subject-card">
-                    <div class="subject-icon pink-glow"><i data-lucide="leaf"></i></div>
-                    <h3>EVS</h3>
+                <!-- Lab Manuals -->
+                <a href="#" class="subject-card">
+                    <div class="subject-icon purple-glow"><i data-lucide="flask-conical"></i></div>
+                    <h3>Lab Manuals</h3>
                 </a>
 
             </div>
@@ -190,12 +152,11 @@
                 window.location.href = 'login.html';
             } else {
                 console.log("Welcome,", user.email);
-                
+
                 // Hide loader
                 const loader = document.getElementById('auth-loader');
                 if (loader) loader.style.opacity = '0';
                 setTimeout(() => { if (loader) loader.style.display = 'none'; }, 300);
-
                 // User is valid. Change the Login button to a Logout button
                 const authBtn = document.getElementById('auth-btn');
                 if (authBtn) {

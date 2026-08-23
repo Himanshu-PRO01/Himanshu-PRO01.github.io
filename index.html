@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EngiNotes - Your Engineering Journey, Simplified.">
+    <title>EngiNotes | Premium EdTech Platform</title>
+    <!-- Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Icons (Lucide via CDN) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i data-lucide="book-open" class="brand-icon"></i> EngiNotes
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="notes.html">Notes</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="icon-btn" aria-label="Search">
+                    <i data-lucide="search"></i>
+                </button>
+                <button class="primary-btn login-btn" onclick="window.location.href='login.html'">
+                    <i data-lucide="user"></i> Login
+                </button>
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="badge">Platform for Engineering Students</div>
+                <h1 class="hero-title">Your Engineering Journey, <span>Simplified.</span></h1>
+                <p class="hero-subtitle">Learn smarter, stay organized, and access everything you need for your engineering journey in one place.</p>
+                <div class="hero-buttons">
+                    <a href="notes.html" class="primary-btn glow-btn">Explore Notes <i data-lucide="arrow-right"></i></a>
+                    <a href="#resources" class="secondary-btn">Explore Resources</a>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="glow-orb orb-1"></div>
+                <div class="glow-orb orb-2"></div>
+                <img src="hero_visual.jpg" alt="Engineering 3D Illustration" class="hero-image">
+            </div>
+        </div>
+    </header>
+
+    <!-- Welcome Section -->
+    <section class="welcome-section" id="about">
+        <div class="section-container">
+            <div class="welcome-grid">
+                <div class="welcome-text">
+                    <h2 class="section-title">Everything You Need to <span>Learn Better.</span></h2>
+                    <p class="section-desc">From engineering notes and study resources to useful academic tools, EngiNotes brings your learning essentials together in one simple platform.</p>
+                </div>
+                <div class="welcome-visual">
+                    <div class="glass-card decorative">
+                        <div class="card-header">
+                            <div class="dots"><span></span><span></span><span></span></div>
+                        </div>
+                        <div class="card-body">
+                            <div class="skeleton-line full"></div>
+                            <div class="skeleton-line partial"></div>
+                            <div class="skeleton-chart">
+                                <div class="bar" style="height: 60%;"></div>
+                                <div class="bar" style="height: 100%;"></div>
+                                <div class="bar" style="height: 40%;"></div>
+                                <div class="bar" style="height: 80%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Cards -->
+    <section class="features-section" id="resources">
+        <div class="section-container">
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon blue-glow"><i data-lucide="library"></i></div>
+                    <h3>Engineering Notes</h3>
+                    <p>Organized study material for your engineering subjects.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon purple-glow"><i data-lucide="brain-circuit"></i></div>
+                    <h3>Smart Resources</h3>
+                    <p>Useful resources to understand concepts and prepare better.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon cyan-glow"><i data-lucide="search"></i></div>
+                    <h3>Quick Search</h3>
+                    <p>Find the information you need without wasting time.</p>
+                </div>
+                <!-- Feature 4 -->
+                <div class="feature-card">
+                    <div class="feature-icon pink-glow"><i data-lucide="target"></i></div>
+                    <h3>Study Better</h3>
+                    <p>Keep your academic resources organized in one place.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section">
+        <div class="quote-background">
+            <div class="grid-pattern"></div>
+        </div>
+        <div class="section-container">
+            <blockquote class="eng-quote">
+                "Don't just study engineering. <br><span class="highlight">Understand it.</span>"
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- Why EngiNotes Section -->
+    <section class="why-section">
+        <div class="section-container">
+            <h2 class="section-title text-center">Why Students Choose <span>EngiNotes</span></h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i data-lucide="layers"></i></div>
+                    <h4>Simple & Organized</h4>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i data-lucide="mouse-pointer-click"></i></div>
+                    <h4>Easy to Navigate</h4>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i data-lucide="users"></i></div>
+                    <h4>Student Focused</h4>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i data-lucide="zap"></i></div>
+                    <h4>Fast & Accessible</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <div class="cta-content">
+                <h2>Ready to Make Engineering Easier?</h2>
+                <p>Start exploring your learning resources today.</p>
+                <button class="primary-btn large-btn glow-btn">Get Started <i data-lucide="arrow-right"></i></button>
+            </div>
+            <div class="cta-glow"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="logo"><i data-lucide="book-open"></i> EngiNotes</div>
+                    <p>Your digital companion for engineering.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="notes.html">Notes</a>
+                    <a href="#resources">Resources</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 EngiNotes. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                    <a href="#" aria-label="Github"><i data-lucide="github"></i></a>
+                    <a href="#" aria-label="Linkedin"><i data-lucide="linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Icons -->
+    <script>
+      lucide.createIcons();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

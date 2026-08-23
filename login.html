@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | EngiNotes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="auth-page">
+  <div class="auth-wrapper">
+    <a href="index.html" class="back-link"><i data-lucide="arrow-left"></i> Back to Home</a>
+
+    <div class="auth-container glass-card">
+      <div class="auth-header">
+        <h2>Welcome to EngiNotes</h2>
+        <p>Your digital engineering companion.</p>
+      </div>
+
+      <div class="auth-tabs">
+        <button class="auth-tab active" id="tab-signin">Sign In</button>
+        <button class="auth-tab" id="tab-signup">Sign Up</button>
+      </div>
+
+      <!-- Sign In Form -->
+      <form id="form-signin" class="auth-form active">
+        <div class="input-group">
+          <label for="signin-email">Email</label>
+          <div class="input-field">
+            <i data-lucide="mail"></i>
+            <input type="email" id="signin-email" placeholder="Enter your email" required>
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="signin-password">Password</label>
+          <div class="input-field">
+            <i data-lucide="lock"></i>
+            <input type="password" id="signin-password" placeholder="Enter your password" required>
+          </div>
+        </div>
+        <button type="submit" class="primary-btn glow-btn auth-btn">Sign In</button>
+      </form>
+
+      <!-- Sign Up Form -->
+      <form id="form-signup" class="auth-form">
+        <div class="input-group">
+          <label for="signup-name">Full Name</label>
+          <div class="input-field">
+            <i data-lucide="user"></i>
+            <input type="text" id="signup-name" placeholder="Enter your full name" required>
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="signup-email">Email</label>
+          <div class="input-field">
+            <i data-lucide="mail"></i>
+            <input type="email" id="signup-email" placeholder="Enter your email" required>
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="signup-password">Create Password</label>
+          <div class="input-field">
+            <i data-lucide="lock"></i>
+            <input type="password" id="signup-password" placeholder="Create a password" required>
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="signup-confirm">Confirm Password</label>
+          <div class="input-field">
+            <i data-lucide="check-circle"></i>
+            <input type="password" id="signup-confirm" placeholder="Confirm your password" required>
+          </div>
+        </div>
+        <button type="submit" class="primary-btn glow-btn auth-btn">Go</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    lucide.createIcons();
+  </script>
+  <script src="script.js"></script>
+
+  <!-- Load the Supabase Client via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <script>
+    // Initialize Supabase using a unique variable name to prevent conflicts
+    const SUPABASE_URL = 'https://cufholhmmheklupruvrn.supabase.co'; 
+    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN1ZmhvbGhtbWhla2x1cHJ1dnJuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc0OTIzOTYsImV4cCI6MjEwMzA2ODM5Nn0.Q3JEN34C-4Qpj5XVC_120tzA1eGvlQYOj2V8y-QMOw0"; 
+
+    const mySupabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    // --- SIGN UP LOGIC ---
+    const signupForm = document.getElementById('form-signup');
+    if (signupForm) {
+      signupForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const name = document.getElementById('signup-name').value;
+        const email = document.getElementById('signup-email').value;
+        const password = document.getElementById('signup-password').value;
+        const confirmPassword = document.getElementById('signup-confirm').value;
+
+        if (password !== confirmPassword) {
+          alert("Passwords do not match!");
+          return;
+        }
+
+        const { data, error } = await mySupabase.auth.signUp({
+          email: email,
+          password: password,
+          options: {
+            data: {
+              full_name: name
+            }
+          }
+        });
+
+        if (error) {
+          alert("Error: " + error.message);
+        } else {
+          alert("Account created! You can now log in.");
+          window.location.href = "home.html";
+        }
+      });
+    }
+
+    // --- LOGIN LOGIC ---
+    const loginForm = document.getElementById('form-signin');
+    if (loginForm) {
+      loginForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = document.getElementById('signin-email').value;
+        const password = document.getElementById('signin-password').value;
+
+        const { data, error } = await mySupabase.auth.signInWithPassword({
+          email: email,
+          password: password,
+        });
+
+        if (error) {
+          alert("Error: " + error.message);
+        } else {
+          alert("Logged in successfully!");
+          window.location.href = "home.html";
+        }
+      });
+    }
+  </script>
+</body>
+</html>

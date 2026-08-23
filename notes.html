@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EngiNotes - Engineering Study Notes">
+    <title>Notes | EngiNotes</title>
+    <!-- Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Icons (Lucide via CDN) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <!-- The "scrolled" class ensures it has the glass background immediately on this page -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i data-lucide="book-open" class="brand-icon"></i> EngiNotes
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="notes.html" class="active">Notes</a></li>
+                <li><a href="home.html#resources">Resources</a></li>
+                <li><a href="home.html#about">About</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="icon-btn" aria-label="Search">
+                    <i data-lucide="search"></i>
+                </button>
+                <button id="auth-btn" class="primary-btn login-btn" onclick="window.location.href='login.html'">
+                    <i data-lucide="user"></i> Login
+                </button>
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="section-container text-center">
+            <h1 class="hero-title">Engineering <span>Notes</span></h1>
+            <p class="hero-subtitle" style="margin: 0 auto;">Select your subject below to access organized study
+                materials, chapters, and resources.</p>
+        </div>
+    </header>
+
+    <!-- Subjects Section -->
+    <section class="subjects-section">
+        <div class="section-container" style="padding-top: 2rem; padding-bottom: 8rem;">
+            <div class="subjects-grid">
+
+                <!-- Physics -->
+                <a href="physics.html" class="subject-card">
+                    <div class="subject-icon cyan-glow"><i data-lucide="atom"></i></div>
+                    <h3>Physics</h3>
+                </a>
+
+                <!-- Chemistry -->
+                <a href="chemistry.html" class="subject-card">
+                    <div class="subject-icon pink-glow"><i data-lucide="flask-conical"></i></div>
+                    <h3>Chemistry</h3>
+                </a>
+
+                <!-- Maths 1 -->
+                <a href="#" class="subject-card">
+                    <div class="subject-icon blue-glow"><i data-lucide="calculator"></i></div>
+                    <h3>Maths 1</h3>
+                </a>
+
+                <!-- Maths 2 -->
+                <a href="#" class="subject-card">
+                    <div class="subject-icon purple-glow"><i data-lucide="function-square"></i></div>
+                    <h3>Maths 2</h3>
+                </a>
+
+                <!-- Basic of Electrical Engineering -->
+                <a href="ee.html" class="subject-card">
+                    <div class="subject-icon cyan-glow"><i data-lucide="zap"></i></div>
+                    <h3>Basic of Electrical Engineering</h3>
+                </a>
+
+                <!-- Basic of Electronics Engineering -->
+                <a href="electronics.html" class="subject-card">
+                    <div class="subject-icon pink-glow"><i data-lucide="cpu"></i></div>
+                    <h3>Basic of Electronics Engineering</h3>
+                </a>
+
+                <!-- Basic of Mechanical Engineering -->
+                <a href="mechanical.html" class="subject-card">
+                    <div class="subject-icon blue-glow"><i data-lucide="settings"></i></div>
+                    <h3>Basic of Mechanical Engineering</h3>
+                </a>
+
+                <!-- Soft Skills -->
+                <a href="soft_skills.html" class="subject-card">
+                    <div class="subject-icon purple-glow"><i data-lucide="users"></i></div>
+                    <h3>Soft Skills</h3>
+                </a>
+
+                <!-- PPS -->
+                <a href="pps.html" class="subject-card">
+                    <div class="subject-icon cyan-glow"><i data-lucide="code"></i></div>
+                    <h3>PPS</h3>
+                </a>
+
+                <!-- EVS -->
+                <a href="evs.html" class="subject-card">
+                    <div class="subject-icon pink-glow"><i data-lucide="leaf"></i></div>
+                    <h3>EVS</h3>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="logo"><i data-lucide="book-open"></i> EngiNotes</div>
+                    <p>Your digital companion for engineering.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="home.html">Home</a>
+                    <a href="notes.html">Notes</a>
+                    <a href="home.html#resources">Resources</a>
+                    <a href="home.html#about">About</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 EngiNotes. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                    <a href="#" aria-label="Github"><i data-lucide="github"></i></a>
+                    <a href="#" aria-label="Linkedin"><i data-lucide="linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+    <script src="script.js"></script>
+
+    <!-- Load the Supabase Client via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script>
+        const SUPABASE_URL = "https://cufholhmmheklupruvrn.supabase.co"; // Replace with your URL
+        const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN1ZmhvbGhtbWhla2x1cHJ1dnJuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc0OTIzOTYsImV4cCI6MjEwMzA2ODM5Nn0.Q3JEN34C-4Qpj5XVC_120tzA1eGvlQYOj2V8y-QMOw0"; // Replace with your Anon Key
+
+        // Renamed variable to mySupabase
+        const mySupabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        async function checkUser() {
+            const { data: { user }, error } = await mySupabase.auth.getUser();
+
+            if (error || !user) {
+                // Not logged in! Redirect to login page
+                window.location.href = 'login.html';
+            } else {
+                console.log("Welcome,", user.email);
+                // User is valid. Change the Login button to a Logout button
+                const authBtn = document.getElementById('auth-btn');
+                if (authBtn) {
+                    authBtn.innerHTML = '<i data-lucide="log-out"></i> Logout';
+                    // Re-render the icon for log-out
+                    lucide.createIcons();
+
+                    // Remove the onclick redirect and add logout logic
+                    authBtn.removeAttribute('onclick');
+                    authBtn.addEventListener('click', async () => {
+                        await mySupabase.auth.signOut();
+                        window.location.href = 'login.html';
+                    });
+                }
+            }
+        }
+
+        // Check on page load
+        checkUser();
+    </script>
+</body>
+
+</html>

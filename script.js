@@ -125,4 +125,23 @@ document.addEventListener('DOMContentLoaded', () => {
             lucide.createIcons();
         }
     }
+
+    // Magical Cursor Glow
+    if (window.innerWidth > 768) {
+        const cursorGlow = document.createElement('div');
+        cursorGlow.classList.add('cursor-glow');
+        document.body.appendChild(cursorGlow);
+
+        window.addEventListener('mousemove', (e) => {
+            if (cursorGlow.animate) {
+                cursorGlow.animate({
+                    left: e.clientX + 'px',
+                    top: e.clientY + 'px'
+                }, { duration: 1500, fill: "forwards" });
+            } else {
+                cursorGlow.style.left = e.clientX + 'px';
+                cursorGlow.style.top = e.clientY + 'px';
+            }
+        });
+    }
 });

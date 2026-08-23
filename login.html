@@ -18,6 +18,8 @@
 
   gtag('config', 'G-2S9LH667NE');
 </script>
+  <!-- hCaptcha Script -->
+  <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 </head>
 
 <body class="auth-page">
@@ -51,6 +53,7 @@
             <input type="password" id="signin-password" placeholder="Enter your password" required>
           </div>
         </div>
+        <div class="h-captcha" data-sitekey="c85ab912-c6b0-4954-83de-1190cc78e9ba" style="margin-bottom: 1.5rem; display: flex; justify-content: center;"></div>
         <button type="submit" class="primary-btn glow-btn auth-btn">Sign In</button>
       </form>
 
@@ -84,6 +87,7 @@
             <input type="password" id="signup-confirm" placeholder="Confirm your password" required>
           </div>
         </div>
+        <div class="h-captcha" data-sitekey="c85ab912-c6b0-4954-83de-1190cc78e9ba" style="margin-bottom: 1.5rem; display: flex; justify-content: center;"></div>
         <button type="submit" class="primary-btn glow-btn auth-btn">Go</button>
       </form>
     </div>
@@ -119,10 +123,17 @@
           return;
         }
 
+        const captchaToken = signupForm.querySelector('[name=h-captcha-response]')?.value;
+        if (!captchaToken) {
+          alert("Please complete the captcha.");
+          return;
+        }
+
         const { data, error } = await mySupabase.auth.signUp({
           email: email,
           password: password,
           options: {
+            captchaToken: captchaToken,
             data: {
               full_name: name
             }
@@ -146,9 +157,18 @@
         const email = document.getElementById('signin-email').value;
         const password = document.getElementById('signin-password').value;
 
+        const captchaToken = loginForm.querySelector('[name=h-captcha-response]')?.value;
+        if (!captchaToken) {
+          alert("Please complete the captcha.");
+          return;
+        }
+
         const { data, error } = await mySupabase.auth.signInWithPassword({
           email: email,
           password: password,
+          options: {
+            captchaToken: captchaToken,
+          }
         });
 
         if (error) {

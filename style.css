@@ -933,4 +933,55 @@ span.highlight, h1 span, h2 span {
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }
-@keyframes spin { 100% { transform: rotate(360deg); } }
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    /* Hide nav links by default */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--bg-card);
+        padding: 1.5rem;
+        border-bottom: 1px solid var(--glass-border);
+    }
+    
+    .nav-links.mobile-active {
+        display: flex;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    .hero {
+        padding: 6rem 1rem 3rem;
+    }
+    
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    .section-container {
+        padding: 4rem 1rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .auth-wrapper {
+        padding: 1rem;
+    }
+}

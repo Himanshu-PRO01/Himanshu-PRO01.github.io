@@ -32,6 +32,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // The lucide icons are initialized directly in the HTML via <script> tag 
     // to ensure they render as quickly as possible.
 
+    
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('mobile-active');
+        });
+    }
+
     // Auth Page Logic
     const tabSignIn = document.getElementById('tab-signin');
     const tabSignUp = document.getElementById('tab-signup');

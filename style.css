@@ -168,6 +168,13 @@ span.highlight, h1 span, h2 span {
     color: var(--accent-blue);
 }
 
+.brand-logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
 .nav-links {
     list-style: none;
     display: flex;

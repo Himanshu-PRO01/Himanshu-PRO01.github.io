@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EngiNotes - About Us">
+    <title>About Us | EngiNotes</title>
+    <link rel="icon" href="assets/img/logo.jpg" type="image/jpeg">
+    <!-- Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Icons (Lucide via CDN) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2S9LH667NE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2S9LH667NE');
+</script>
+    <style>
+        .about-section {
+            padding: 8rem 2rem 4rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .about-section h1 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .about-section p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 3rem;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .team-member {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .team-member:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-blue);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        .team-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-blue);
+        }
+        .team-icon i {
+            width: 40px;
+            height: 40px;
+        }
+        .team-member h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+        .team-member p {
+            font-size: 1rem;
+            margin-bottom: 0;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+    <!-- Auth Loader Overlay -->
+    <div id="auth-loader" class="auth-loader-overlay">
+        <div class="spinner"></div>
+    </div>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="assets/img/logo.jpg" alt="EngiNotes Logo" class="brand-logo"> EngiNotes
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="notes.html">Notes</a></li>
+                <li><a href="home.html#resources">Resources</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="icon-btn" aria-label="Search">
+                    <i data-lucide="search"></i>
+                </button>
+                <button id="auth-btn" class="primary-btn login-btn" onclick="window.location.href='login.html'">
+                    <i data-lucide="user"></i> Login
+                </button>
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <h1>About Us</h1>
+        <p>Welcome to EngiNotes, your digital engineering companion. We are dedicated to providing the best notes and resources to help students excel in their engineering journey. Meet the creators behind the platform.</p>
+        
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="team-icon">
+                    <i data-lucide="user"></i>
+                </div>
+                <h3>Himanshu Kesh Chaudhary</h3>
+                <p>Co-Founder & Developer</p>
+            </div>
+            
+            <div class="team-member">
+                <div class="team-icon">
+                    <i data-lucide="user"></i>
+                </div>
+                <h3>Divyanshu Kumar Sharma</h3>
+                <p>Co-Founder & Developer</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="logo"><img src="assets/img/logo.jpg" alt="EngiNotes Logo" class="brand-logo" style="width: 24px; height: 24px; display: inline-block; vertical-align: middle;"> EngiNotes</div>
+                    <p>Your digital engineering companion.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="home.html">Home</a>
+                    <a href="notes.html">Notes</a>
+                    <a href="home.html#resources">Resources</a>
+                    <a href="about.html">About</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 EngiNotes. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                    <a href="#" aria-label="Github"><i data-lucide="github"></i></a>
+                    <a href="#" aria-label="Linkedin"><i data-lucide="linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Icons -->
+    <script>
+      lucide.createIcons();
+    </script>
+    <script src="script.js"></script>
+
+    <!-- Load the Supabase Client via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script>
+        const SUPABASE_URL = "https://cufholhmmheklupruvrn.supabase.co"; // Replace with your URL
+        const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN1ZmhvbGhtbWhla2x1cHJ1dnJuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc0OTIzOTYsImV4cCI6MjEwMzA2ODM5Nn0.Q3JEN34C-4Qpj5XVC_120tzA1eGvlQYOj2V8y-QMOw0"; // Replace with your Anon Key
+
+        const mySupabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        async function checkUser() {
+            const { data: { user }, error } = await mySupabase.auth.getUser();
+
+            if (error || !user) {
+                // Not logged in! Redirect to login page
+                window.location.href = 'login.html';
+            } else {
+                console.log("Welcome,", user.email);
+
+                // Hide loader
+                const loader = document.getElementById('auth-loader');
+                if (loader) loader.style.opacity = '0';
+                setTimeout(() => { if (loader) loader.style.display = 'none'; }, 300);
+                // User is valid. Change the Login button to a Logout button
+                const authBtn = document.getElementById('auth-btn');
+                if (authBtn) {
+                    authBtn.innerHTML = '<i data-lucide="log-out"></i> Logout';
+                    // Re-render the icon for log-out
+                    lucide.createIcons();
+
+                    // Remove the onclick redirect and add logout logic
+                    authBtn.removeAttribute('onclick');
+                    authBtn.addEventListener('click', async () => {
+                        await mySupabase.auth.signOut();
+                        window.location.href = 'login.html';
+                    });
+                }
+            }
+        }
+
+        // Check on page load
+        checkUser();
+    </script>
+</body>
+</html>

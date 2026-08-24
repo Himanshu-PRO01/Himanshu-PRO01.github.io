@@ -191,8 +191,10 @@
             const { data: { user }, error } = await mySupabase.auth.getUser();
 
             if (error || !user) {
-                // Not logged in! Redirect to login page
-                window.location.href = 'login.html';
+                // Not logged in! Just hide loader
+                const loader = document.getElementById('auth-loader');
+                if (loader) loader.style.opacity = '0';
+                setTimeout(() => { if (loader) loader.style.display = 'none'; }, 300);
             } else {
                 console.log("Welcome,", user.email);
 
